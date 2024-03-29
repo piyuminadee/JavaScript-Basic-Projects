@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      body {
+        background-color: rgb(24, 23, 23);
+      }
+
+      p {
+        font-family: "Times New Roman", Times, serif;
+        font-weight: 900;
+        font-size: 30px;
+        color: white;
+        padding: 20px;
+      }
+
+      img {
+        border-radius: 50%;
+        width: 60px;
+        padding-top: 5px ;
+        margin: 10px;
+        object-fit: contain;
+        background-color: rgb(24, 23, 23);
+      }
+      .scissors,
+      .rock,
+      .paper {
+        border-radius: 50%;
+        background-color: transparent;
+        border-color: white;
+        padding: 10px;
+        margin: 10px;
+      }
+      .reset-button {
+        padding: 15px;
+        font-size: 30px;
+        margin: 20px;
+        border-radius: 20px;
+        background-color: #ecb80b;
+        color: blue;
+        border: none;
+        transition: all 0.1s;
+      }
+      .reset-button :active{
+        opacity: 0.8;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Rock Paper Scissors</p>
+    <button
+      class="rock"
+      onclick="const computerMove = pickComputerMove();  playGame('Rock')"
+    >
+      <img src="rock-emoji.png" alt="rock" />
+    </button>
+    <button
+      class="paper"
+      onclick="computerMove = pickComputerMove(); playGame('Paper')"
+    >
+      <img src="paper-emoji.png" alt="paper" />
+    </button>
+    <button
+      class="scissors"
+      onclick="computerMove = pickComputerMove(); playGame('Scissors')"
+      
+    >
+      <img src="scissors-emoji.png" alt="scissors" />
+    </button>
+     
+    <p class="yourChoise"></p>
+    <p class="computerConclusion"></p>
+    <p class="marksTogether"></p>
+
+    <button
+      class="reset-button"
+      onclick=" updateScore();
+    "
+    class="btn btn-secondary btn-lg active"
+    >
+      Reset Score
+    </button>
+
+    <script>
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+        Ties: 0,
+      };
+
+      function updateScore() {
+        score.wins = 0;
+        score.losses = 0;
+        score.Ties = 0;
+        localStorage.removeItem("score");
+        document.querySelector(
+          ".marksTogether"
+        ).innerHTML = `Wins : ${score.wins} , Losses : ${score.losses}, Ties : ${score.Ties}`;
+      }
+      function pickComputerMove() {
+        const randomNum = Math.random();
+        if (randomNum == 0 && randomNum <= 1 / 3) {
+          computerMove = "Rock";
+        } else if (randomNum > 1 / 3 && randomNum <= 2 / 3) {
+          computerMove = "Paper";
+        } else {
+          computerMove = "Scissors";
+        }
+        return computerMove;
+      }
+
+      function playGame(selected) {
+        if (computerMove === "Rock") {
+          score.wins += 1;
+
+          console.log("You win");
+          document.querySelector(".yourChoise").innerHTML = "You Win";
+        } else if (computerMove === "Paper") {
+          
+          score.Ties += 1;
+          console.log("You Toi");
+          document.querySelector(".yourChoise").innerHTML = "You Toi";
+        } else {
+          score.losses += 1;
+
+          console.log("You Loss");
+          document.querySelector(".yourChoise").innerHTML = "You Loss";
+        }
+        localStorage.setItem("score", JSON.stringify(score));
+
+        document.querySelector(
+          ".computerConclusion"
+        ).innerHTML = `You<img src="${selected}-emoji.png" alt=""> - <img src="${computerMove}-emoji.png" alt="">Computer`;
+        console.log(`You ${selected} - ${computerMove} Computer`);
+        console.log(
+          `Wins : ${score.wins} , Losses : ${score.losses}, Ties : ${score.Ties}`
+        );
+        document.querySelector(
+          ".marksTogether"
+        ).innerHTML = `Wins : ${score.wins} , Losses : ${score.losses}, Ties : ${score.Ties}`;
+      }
+    </script>
+  </body>
+</html>
