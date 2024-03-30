@@ -1,6 +1,7 @@
 # Web_Project
 HTML, CSS and JS Projects
 # Rock Paper Scissors Game
+<img src="https://github.com/piyuminadee/Web_Project/blob/main/Screenshot%202024-03-30%20121529.png" >
 
 A simple Rock Paper Scissors game implemented in HTML, CSS, and JavaScript.
 
