@@ -59,6 +59,11 @@ const apiKey = 'fe7875a2b9ccc4853f7546ed125b3853';
 Credits
 Weather icons by OpenWeatherMap.
 
+# Small Stop Watch
+
+<img src = "https://github.com/piyuminadee/JavaScript-Basic-Projects/blob/main/Stop%20watch/imgs/stopwtch1.png?raw=true">
+<img src = "https://github.com/piyuminadee/JavaScript-Basic-Projects/blob/main/Stop%20watch/imgs/2.png?raw=true">
+
 ## Built With
 
 - HTML
