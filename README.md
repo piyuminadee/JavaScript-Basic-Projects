@@ -31,14 +31,15 @@ If the player wins, the score increments by one. If it's a tie, the score remain
 4. Use the "Reset Score" button to reset the score to zero.
 
 ----------------------------------------------------------------------------------------------
-Weather App
-<img src="https://github.com/piyuminadee/Web_Project/blob/main/weather.png" >
-This is a simple weather app created using HTML, CSS, and JavaScript. It allows users to search for weather information based on city names.
+# Weather App
+<img src="https://github.com/piyuminadee/JavaScript-Basic-Projects/blob/main/wether.png?raw=true" >
 
+This is a simple weather app allows users to search for weather information based on city names.
+<br>
 Features
 Search: Users can enter the name of a city in the search bar and click the search button to fetch weather data for that city.
 Display: The app displays the current temperature and weather description for the searched city.
-Responsive: The app is responsive and works well on both desktop and mobile devices.
+Responsive: The app is responsive and works well on both desktop and mobile devices.<br>
 Usage
 Clone the repository or download the project files.
 Open the index.html file in your web browser.
@@ -51,7 +52,7 @@ styles.css: CSS file for styling the app interface.
 app.js: JavaScript file for fetching weather data and updating the UI.
 Getting Started
 To run the weather app locally, you'll need an API key from OpenWeatherMap. Once you have the API key, replace 'YOUR_API_KEY' in the script.js file with your actual API key.
-
+<br>
 javascript
 Copy code
 const apiKey = 'fe7875a2b9ccc4853f7546ed125b3853'; 
