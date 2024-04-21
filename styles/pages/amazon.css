@@ -17,6 +17,8 @@
   grid-template-columns: repeat(8, 1fr);
 }
 
+
+
 /* @media is used to create responsive design (making the
    website look good on any screen size). This @media
    means when the screen width is 2000px or less, we
@@ -153,4 +155,7 @@
   width: 100%;
   padding: 8px;
   border-radius: 50px;
+}
+.added-to-cart-visible{
+  opacity: 1;
 }
