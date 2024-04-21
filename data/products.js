@@ -246,6 +246,40 @@ export const products = [
     ]
   },
   {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "waterprof-bag",
+    rating: {
+      stars: 4.5,
+      count: 99
+    },
+    priceCents: 2500,
+    keywords: [
+      "kleenex",
+      "tissues",
+      "kitchen",
+      "tissues box",
+      "napkins"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Ultra Soft umbrella 2-Ply - 18 Box",
+    rating: {
+      stars: 4.5,
+      count: 99
+    },
+    priceCents: 2374,
+    keywords: [
+      "kleenex",
+      "tissues",
+      "kitchen",
+      "tissues box",
+      "napkins"
+    ]
+  },
+  {
     id: "6b07d4e7-f540-454e-8a1e-363f25dbae7d",
     image: "images/products/facial-tissue-2-ply-18-boxes.jpg",
     name: "Ultra Soft Tissue 2-Ply - 18 Box",
