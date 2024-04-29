@@ -1,16 +1,16 @@
 export let cart = [
   {
-  productId : '82bb68d7-ebc9-476a-989c-c78a40ee5cd9',
-  quantity: 2
-  },
-  {
-    productId : 'c2a82c5e-aff4-435f-9975-517cfaba2ece',
-    quantity: 3
+    productId : '82bb68d7-ebc9-476a-989c-c78a40ee5cd9',
+    quantity: 2
     },
     {
-      productId : 'id1',
-      quantity: 1
-      }
+      productId : 'c2a82c5e-aff4-435f-9975-517cfaba2ece',
+      quantity: 3
+      },
+      {
+        productId : 'id1',
+        quantity: 1
+        }
 ];
 
 export function addtoCart(quantity, productId){
