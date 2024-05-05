@@ -1,7 +1,9 @@
-import { cart, removeFromCart } from "../data/cart.js";
+import { cart, removeFromCart,checkoutCount } from "../data/cart.js";
 import {products} from '../data/products.js';
 import { formatCurrency } from "./utils/money.js";
-
+//import { checkoutCount } from "../data/cart.js";
+//import {updateCartQuantity} from "./amazon.js";
+ 
 
 
 let cartSummeryHTML = '';
@@ -105,6 +107,15 @@ document.querySelectorAll('.js-delete-quantity-link')
        const container = document.querySelector(`.js-cart-item-container-${productId}`);
        //console.log(container);
        container.remove();
+       
      
     })
+    checkoutCount();
+    
+
   })
+
+
+
+
+
