@@ -76,6 +76,7 @@ document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 
 checkoutCount();
 
+
 };
 
 
