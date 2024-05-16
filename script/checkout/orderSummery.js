@@ -1,10 +1,12 @@
 import { cart, removeFromCart, checkoutCount, updateDeliveryOption } from "../../data/cart.js";
-import { products } from "../../data/products.js";
+import { products, getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 //import { checkoutCount } from "../data/cart.js";
 //import {updateCartQuantity} from "./amazon.js";
-import { deliveryOptions } from "../../data/deliveryOptions.js";
+import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
+import { renderPaymentSummery } from "./paymnetSummery.js";
+
 
 // const today = dayjs();
 // const deliveryDate = today.add(7, "days");
@@ -13,20 +15,11 @@ export function renderSummery(){
     let cartSummeryHTML = "";
     cart.forEach((cartItem) => {
       const productId = cartItem.productId;
-      let machingProduct;
-
-      products.forEach((product) => {
-        if (product.id === productId) machingProduct = product;
-      });
-      console.log(machingProduct);
+      const machingProduct = getProduct(productId);
+      //console.log(machingProduct);
 
       const deliveryOptionId = cartItem.deliveryOptionId;
-      let deliveryOption;
-      deliveryOptions.forEach((option) => {
-        if (option.id === deliveryOptionId) {
-          deliveryOption = option;
-        }
-      });
+      let deliveryOption = getDeliveryOption(deliveryOptionId);
       const today = dayjs();
       const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
       const dateString = deliveryDate.format("dddd, MMMM D");
@@ -173,6 +166,7 @@ export function renderSummery(){
           const {productId, deliveryOptionId} = element.dataset;
           updateDeliveryOption(productId, deliveryOptionId); 
           renderSummery();
+          renderPaymentSummery();
         });
        
         
